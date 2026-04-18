@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Place Order | PakkOrder</title>
+    <link rel="stylesheet" href="/styles.css" />
+</head>
+<body>
+    <main class="page-shell">
+        <section class="surface auth-wrap" aria-label="Buyer order placement">
+            <aside class="auth-art">
+                <div class="shape a"></div>
+                <div class="shape b"></div>
+                <h1>Buyer Checkout</h1>
+                <p>
+                    Place an order for a seller by domain name.
+                    Orders are pushed directly to that seller's dashboard as pending confirmations.
+                </p>
+            </aside>
+
+            <section class="auth-panel">
+                <h2 class="panel-title">Place an order</h2>
+                <p class="panel-subtitle">Use the seller domain to route this order to the correct dashboard.</p>
+
+                <form id="orderForm" novalidate>
+                    <label for="domainName">Seller Domain</label>
+                    <input id="domainName" name="domainName" type="text" placeholder="shopname.local" required />
+
+                    <label for="buyerName">Buyer Name</label>
+                    <input id="buyerName" name="buyerName" type="text" required />
+
+                    <label for="phone">Buyer Phone</label>
+                    <input id="phone" name="phone" type="text" placeholder="+923001112233" required />
+
+                    <label for="totalAmount">Order Amount (PKR)</label>
+                    <input id="totalAmount" name="totalAmount" type="text" placeholder="15000" required />
+
+                    <button id="placeOrderBtn" class="btn-primary" type="submit">Place order</button>
+                    <div id="message" class="message" role="alert" aria-live="polite"></div>
+                </form>
+
+                <p class="auth-switch">Seller? <a href="/login.html">Open dashboard login</a></p>
+            </section>
+        </section>
+    </main>
+
+    <script src="/store.js"></script>
+</body>
+</html>

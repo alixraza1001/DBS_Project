@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard | PakkOrder</title>
+    <link rel="stylesheet" href="/styles.css" />
+</head>
+<body>
+    <main class="page-shell">
+        <header class="surface topbar">
+            <div class="identity">
+                <h2 id="welcomeTitle">Pending COD Confirmations</h2>
+                <p id="identityLine">Loading account...</p>
+            </div>
+            <button id="logoutBtn" class="btn-secondary" type="button">Logout</button>
+        </header>
+
+        <section class="surface toolbar" aria-label="Search orders">
+            <input id="searchInput" type="search" placeholder="Search by order ID, buyer ID, buyer name, phone, amount, date..." aria-label="Search orders" />
+            <button id="refreshBtn" class="btn-tertiary" type="button">Refresh</button>
+        </section>
+
+        <section class="surface orders" aria-label="Orders table">
+            <div class="orders-header">
+                <h3>Order list</h3>
+                <span id="sourceTag" class="meta">Data source: checking...</span>
+            </div>
+            <div class="table-wrap">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Order ID</th>
+                            <th>Buyer ID</th>
+                            <th>Buyer</th>
+                            <th>Phone</th>
+                            <th>Date</th>
+                            <th>Amount</th>
+                        </tr>
+                    </thead>
+                    <tbody id="ordersBody"></tbody>
+                </table>
+                <div id="emptyState" class="empty" hidden>No matching orders found.</div>
+            </div>
+        </section>
+    </main>
+
+    <script src="/dashboard.js"></script>
+</body>
+</html>
